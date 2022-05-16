@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           ANh Trung HandSome đẹp zai
-          
+          quá
         </p>
         
       </header>
