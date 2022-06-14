@@ -1,0 +1,20 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  min-height: 4rem;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 40px;
+  font-size: 20px;
+  background: #202142;
+  color: white;
+  &__list {
+    display: flex;
+  }
+  &__item {
+    margin-right: 15px;
+  }
+  &__text {
+    margin-left: 10px;
+  }
+}
