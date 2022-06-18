@@ -1,0 +1,8 @@
+.active {
+  cursor: pointer;
+  color: aqua;
+}
+
+.hobby-list > li {
+  transition: all 0.3s;
+}

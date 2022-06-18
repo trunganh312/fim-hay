@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { GithubContext } from '../../context/github/GithubContext';
+import { useContext, useState } from 'react';
 import AlertContext from '../../context/alert/AlertContext';
+import { GithubContext } from '../../context/github/GithubContext';
 function UserSearch(props) {
   const [text, setText] = useState('');
-  const { users, dispatch, axiosUsers, clearUser, setLoading } = useContext(GithubContext);
+  const { users, axiosUsers, clearUser } = useContext(GithubContext);
   const { setAlert } = useContext(AlertContext);
   const handleChange = (e) => {
     setText(e.target.value);
