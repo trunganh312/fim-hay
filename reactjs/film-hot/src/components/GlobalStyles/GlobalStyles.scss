@@ -1,0 +1,21 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+html {
+  font-size: 62.5%;
+  background: #222;
+}
+
+* {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.content-movies {
+  padding: 0 20px;
+}
