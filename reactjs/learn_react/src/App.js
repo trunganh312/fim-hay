@@ -1,25 +1,15 @@
 // import './App.css';
-import React, { useEffect } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import productsApi from './API/productApi';
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/Header/index';
 import AlbumFeatures from './features/Album';
 import CounterFeatures from './features/Counter';
+import ProductFeatures from './features/Product';
+import DetailsPage from './features/Product/pages/DetailsPage';
+import ListPage from './features/Product/pages/ListPage';
 import TodoFeature from './features/Todo';
 import ReduxPage from './pages/ReduxPage/ReduxPage';
-import Header from './components/Header/index';
 
 function App() {
-  useEffect(() => {
-    const fetchProduct = async () => {
-      const params = {
-        _limit: 10,
-      };
-      const productList = await productsApi.getAll(params);
-      console.log(productList);
-    };
-    fetchProduct();
-  }, []);
-
   return (
     <div className="app">
       <Header />
@@ -29,6 +19,11 @@ function App() {
         <Route path="/album" element={<AlbumFeatures />} />
         <Route path="/todo/*" element={<TodoFeature />} />
         <Route path="/redux" element={<ReduxPage />} />
+
+        <Route path="/product" element={<ProductFeatures />}>
+          <Route path=":productId" element={<DetailsPage />} />
+          <Route path="/product" element={<ListPage />} />
+        </Route>
       </Routes>
     </div>
   );

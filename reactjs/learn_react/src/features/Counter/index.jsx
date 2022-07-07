@@ -17,7 +17,7 @@ function CounterFeatures() {
 
   return (
     <div>
-      count: {count}
+      <h1>{count}</h1>
       <button onClick={handleDecrea}>Lùi</button>
       <button onClick={handleIncea}>Tiến</button>
     </div>

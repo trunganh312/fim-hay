@@ -7,6 +7,8 @@ import Footer from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import DetailsPageMovie from "./pages/DetailsPageMovie";
 import DetailsPageTV from "./pages/DetailsPageTV";
+import WatchPageMovie from "./pages/WatchPageMovie";
+import WatchPageTV from "./pages/WatchPageTV";
 function App() {
   return (
     <div className="App">
@@ -14,7 +16,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/movie/:movieId" element={<DetailsPageMovie />} />
+        <Route path="/movie/:movieId/watch" element={<WatchPageMovie />} />
         <Route path="/tv/:tvId" element={<DetailsPageTV />} />
+        <Route path="/tv/:tvId/watch" element={<WatchPageTV />} />
       </Routes>
       <Footer />
     </div>

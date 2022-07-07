@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import RatedStar from "../../components/RatedStar/RatedStar";
 import Cast from "../Cast";
 import SimilarSlider from "../Similar";
 import "./styles.scss";
 
 function Details({ data = {}, similar, cast }) {
   console.log(data);
-  const length = Math.round(data.vote_average) || 10;
-  const arrRate = Array.from(new Array(Math.round(length))) || [];
-  const arrNoRate = Array.from(new Array(Math.round(10 - length)));
+  const voteAverage = data.vote_average;
+  const voteCount = data.vote_count;
   return (
     <div className="details">
       <div
@@ -34,28 +35,34 @@ function Details({ data = {}, similar, cast }) {
           <div className="col l-7">
             <div className="content">
               <div className="btn__group" style={{ display: "flex" }}>
-                <button
-                  className="btn"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    marginRight: "25px",
-                  }}
+                <Link
+                  to={`/${data.original_title ? "movie" : "tv"}/${
+                    data.id
+                  }/watch`}
                 >
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 512 512"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                    style={{ marginRight: "10px" }}
+                  <button
+                    className="btn"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      marginRight: "25px",
+                    }}
                   >
-                    <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path>
-                  </svg>
-                  Xem bây giờ
-                </button>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ marginRight: "10px" }}
+                    >
+                      <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"></path>
+                    </svg>
+                    Xem bây giờ
+                  </button>
+                </Link>
                 <button
                   className="btn"
                   style={{
@@ -88,23 +95,7 @@ function Details({ data = {}, similar, cast }) {
                   return <p key={gen.id}>{gen.name}</p>;
                 })}
               </div>
-              <div className="rated">
-                {arrRate.map((item, i) => {
-                  return (
-                    <span key={i} className="rated__item">
-                      ★
-                    </span>
-                  );
-                })}
-                {arrNoRate.map((item, i) => {
-                  return (
-                    <span key={i} className="norated__item">
-                      ★
-                    </span>
-                  );
-                })}
-                <p>({data.vote_count} phiếu)</p>
-              </div>
+              <RatedStar voteAverage={voteAverage} voteCount={voteCount} />
             </div>
           </div>
         </div>
@@ -112,8 +103,8 @@ function Details({ data = {}, similar, cast }) {
       {data.hompage || (
         <p className="web">
           Trang web chính thức :
-          <a href={data?.homepage} target="_blank">
-            {data?.homepage}
+          <a href={data.homepage} target="_blank">
+            {data.homepage}
           </a>
         </p>
       )}

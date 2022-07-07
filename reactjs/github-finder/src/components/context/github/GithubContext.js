@@ -17,13 +17,14 @@ function GithubProvider({ children }) {
 
   const axiosUsers = async (params) => {
     const paramsString = queryString.stringify(params);
-    console.log(paramsString);
     setLoading();
-    const userList = await userApi.get(paramsString);
-    dispatch({
-      type: 'GET_USERS',
-      payload: userList.items,
-    });
+    if (params.q !== '') {
+      const userList = await userApi.get(paramsString);
+      dispatch({
+        type: 'GET_USERS',
+        payload: userList.items,
+      });
+    }
   };
 
   const getUser = async (login) => {

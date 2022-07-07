@@ -1,13 +1,10 @@
 // import './App.css';
-import React, { useEffect, useRef, useState } from 'react';
-import Clock from './components/Clock';
-import ColorBox from './components/ColorBox';
-import Pagination from './components/Pagination';
-import PostList from './components/PostList';
-import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
 import queryString from 'query-string';
+import { useEffect, useState } from 'react';
+import Clock from './components/Clock';
+import Pagination from './components/Pagination';
 import PostFiterForm from './components/PostFilterForm';
+import PostList from './components/PostList';
 // import TodoFeature from './features/Todo';
 
 // const todoList = [
@@ -66,9 +63,7 @@ function HomePages() {
       try {
         const paramsString = queryString.stringify(filter);
         console.log(paramsString);
-        const response = await fetch(
-          `http://js-post-api.herokuapp.com/api/posts?${paramsString}`
-        );
+        const response = await fetch(`http://js-post-api.herokuapp.com/api/posts?${paramsString}`);
         const responseJSON = await response.json();
         console.log(responseJSON);
         const { data, pagination } = responseJSON;

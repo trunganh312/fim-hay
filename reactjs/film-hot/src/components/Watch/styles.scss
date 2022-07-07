@@ -1,0 +1,78 @@
+.watch {
+  margin-top: 100px;
+
+  &__name {
+    font-size: 15px;
+    text-align: left;
+    color: #e5e7eb;
+  }
+
+  &__content {
+    margin-left: 13px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+  &__recommend {
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+    & > h2 {
+      color: #e5e7eb;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    display: flex;
+    margin-top: 15px;
+  }
+
+  &__img {
+    min-width: 80px;
+    height: 120px;
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.watch__card:hover {
+  opacity: 0.9;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.watch__text {
+  margin: 0 70.5px;
+  width: 700px;
+  color: #e5e7eb;
+}
+
+.watch__name-x {
+  font-size: 25px;
+  text-align: left;
+  margin: 20px 0;
+  margin-top: 40px;
+  & a {
+    color: #e5e7eb;
+  }
+  &:hover a {
+    color: #ff4112;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+}
+
+.watch__introduce {
+  font-size: 15px;
+  text-align: left;
+  line-height: 28px;
+  word-break: break-all;
+}
+
+.watch__day {
+  font-size: 15px;
+  text-align: left;
+}

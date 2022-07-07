@@ -8,8 +8,8 @@ function AlbumList({ albumList }) {
   console.log(albumList);
   return (
     <ul>
-      {albumList.map(album => (
-        <AlbumItem album={album} />
+      {albumList.map((album, idx) => (
+        <AlbumItem album={album} key={idx} />
       ))}
     </ul>
   );
