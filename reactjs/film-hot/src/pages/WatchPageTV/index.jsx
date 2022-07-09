@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import TiviApi from "../../Api/tiviApi";
-import Watch from "../../components/Watch";
-
+import WatchTV from "../../features/WatchTV";
 WatchPageTV.propTypes = {};
 
 function WatchPageTV(props) {
@@ -12,7 +11,7 @@ function WatchPageTV(props) {
   useEffect(() => {
     (async () => {
       const detailsTV = await TiviApi.getDetail(tvId);
-      const { results } = await TiviApi.getRecommend(tvId);
+      const { results } = await TiviApi.getRecommended(tvId);
       setData(detailsTV);
       setRecommend(results);
       console.log(detailsTV);
@@ -23,7 +22,7 @@ function WatchPageTV(props) {
   });
   return (
     <>
-      <Watch data={data} recommend={recommend} />
+      <WatchTV data={data} recommend={recommend} />
     </>
   );
 }

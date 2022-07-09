@@ -42,6 +42,11 @@ const TiviApi = {
     const url = `tv/${id}/credits?api_key=${API_KEY}`;
     return instance.get(url);
   },
+
+  getWatch(id) {
+    const url = `tv/${id}/videos?api_key=${API_KEY}`;
+    return instance.get(url);
+  },
 };
 
 export default TiviApi;

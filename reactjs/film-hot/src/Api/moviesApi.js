@@ -43,6 +43,12 @@ const moviesApi = {
     const url = `movie/${id}/credits?api_key=${API_KEY}`;
     return instance.get(url);
   },
+
+  // Lay doan trailer cua phim
+  getWatch(id) {
+    const url = `movie/${id}/videos?api_key=${API_KEY}`;
+    return instance.get(url);
+  },
 };
 
 export default moviesApi;

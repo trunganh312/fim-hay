@@ -7,14 +7,18 @@ function DetailsPageTV(props) {
   const [data, setData] = useState({});
   const [similar, setSimilar] = useState();
   const [cast, setCast] = useState([]);
+  const [review, setReview] = useState([]);
+  const string = "TV";
   useEffect(() => {
     (async () => {
       const detailsTV = await TiviApi.getDetail(tvId);
       const { results } = await TiviApi.getSimilar(tvId);
       const { cast } = await TiviApi.getCast(tvId);
+      const review = await TiviApi.getWatch(tvId);
       setData(detailsTV);
       setSimilar(results);
       setCast(cast);
+      setReview(review.results);
       console.log(detailsTV);
     })();
   }, [tvId]);
@@ -24,7 +28,13 @@ function DetailsPageTV(props) {
   console.log(data);
   return (
     <>
-      <Details data={data} similar={similar} cast={cast} />
+      <Details
+        data={data}
+        similar={similar}
+        cast={cast}
+        review={review}
+        string={string}
+      />
     </>
   );
 }

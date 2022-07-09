@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import RatedStar from "../../components/RatedStar/RatedStar";
 import Cast from "../Cast";
 import SimilarSlider from "../Similar";
+import Trailer from "../Trailer";
 import "./styles.scss";
 
-function Details({ data = {}, similar, cast }) {
-  console.log(data);
+function Details({ data = {}, similar, cast, review, string }) {
   const voteAverage = data.vote_average;
   const voteCount = data.vote_count;
+  const [show, setShow] = useState(false);
+  const handleClickShowDialog = (stt) => {
+    setShow(stt);
+  };
   return (
     <div className="details">
       <div
@@ -69,6 +73,9 @@ function Details({ data = {}, similar, cast }) {
                     display: "flex",
                     alignItems: "center",
                   }}
+                  onClick={() => {
+                    handleClickShowDialog(true);
+                  }}
                 >
                   <svg
                     stroke="currentColor"
@@ -110,6 +117,13 @@ function Details({ data = {}, similar, cast }) {
       )}
       <Cast cast={cast} />
       <SimilarSlider similar={similar} />
+      {show && (
+        <Trailer
+          review={review}
+          onClickClose={handleClickShowDialog}
+          string={string}
+        />
+      )}
     </div>
   );
 }
