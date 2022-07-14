@@ -6,11 +6,6 @@ import "./styles.scss";
 function WatchTV({ data, seasons }) {
   const { tvId } = useParams();
 
-  console.log(data);
-  const handleClick = (item) => {
-    console.log(item);
-  };
-
   return (
     <div className="grid wide">
       <div className="row">
@@ -54,12 +49,11 @@ function WatchTV({ data, seasons }) {
         {seasons.map((item, i) => {
           return (
             <Link
+              key={item.id}
               to={{
-                pathname: `/tv/${tvId}/episode`,
-                query: {
-                  season: item.season_number,
-                  episode: item.episode_number,
-                },
+                pathname: `/tv/${tvId}/episode?season=${
+                  item.season_number
+                }&episode=${item.episode_number || 1}`,
               }}
               style={{ width: "100%" }}
             >
@@ -67,8 +61,6 @@ function WatchTV({ data, seasons }) {
                 className={classNames({
                   card__seasons: true,
                 })}
-                key={item.id}
-                onClick={() => handleClick(item)}
               >
                 <div className="card__seasons--img">
                   <img

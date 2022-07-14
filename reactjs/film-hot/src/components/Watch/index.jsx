@@ -7,7 +7,6 @@ function Watch({ data, recommend }) {
   const newArrRecommendNotNull = newArrRecommend.filter(
     (item) => item.backdrop_path !== null
   );
-  console.log(newArrRecommendNotNull);
   return (
     <div className="watch">
       <div className="grid wide">
@@ -28,7 +27,7 @@ function Watch({ data, recommend }) {
           <div className="col l-3">
             <div className="watch__recommend">
               <h2>Recommended movie</h2>
-              {recommend.map((item) => {
+              {newArrRecommendNotNull.map((item) => {
                 return (
                   <Link
                     to={`/${item.original_title ? "movie" : "tv"}/${item.id}`}

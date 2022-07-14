@@ -4,7 +4,7 @@ import TiviApi from "../../Api/tiviApi";
 import WatchTV from "../../features/WatchTV";
 WatchPageTV.propTypes = {};
 
-function WatchPageTV(props) {
+function WatchPageTV() {
   let { tvId } = useParams();
   const [data, setData] = useState({});
   const [seasons, setSeasons] = useState([]);

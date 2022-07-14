@@ -26,7 +26,6 @@ function DetailsPageMovie(props) {
   useEffect(() => {
     document.title = data.original_title;
   });
-  console.log(data);
   return (
     <>
       <Details

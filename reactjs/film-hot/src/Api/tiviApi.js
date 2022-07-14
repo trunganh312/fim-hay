@@ -48,10 +48,14 @@ const TiviApi = {
     return instance.get(url);
   },
 
-  // Lấy ra bộ truyền hình
-  getTV(id, seasonId, episoId, params) {
-    const url = `tv/${id}/season/${seasonId}/episode/${episoId}?api_key=${API_KEY}`;
-    return instance.get(url, { params });
+  getTVSeason(id, seasonId) {
+    const url = `tv/${id}/season/${seasonId}?api_key=${API_KEY}`;
+    return instance.get(url);
+  },
+
+  getTVEpisode(id, seasonId, episodeId) {
+    const url = `/tv/${id}/season/${seasonId}/episode/${episodeId}?api_key=${API_KEY}`;
+    return instance.get(url);
   },
 };
 
