@@ -7,14 +7,13 @@ WatchPageTV.propTypes = {};
 function WatchPageTV(props) {
   let { tvId } = useParams();
   const [data, setData] = useState({});
-  const [recommend, setRecommend] = useState([]);
+  const [seasons, setSeasons] = useState([]);
   useEffect(() => {
     (async () => {
       const detailsTV = await TiviApi.getDetail(tvId);
-      const { results } = await TiviApi.getRecommended(tvId);
       setData(detailsTV);
-      setRecommend(results);
-      console.log(detailsTV);
+      setSeasons(detailsTV.seasons);
+      console.log(detailsTV.seasons);
     })();
   }, [tvId]);
   useEffect(() => {
@@ -22,7 +21,7 @@ function WatchPageTV(props) {
   });
   return (
     <>
-      <WatchTV data={data} recommend={recommend} />
+      <WatchTV data={data} seasons={seasons} />
     </>
   );
 }

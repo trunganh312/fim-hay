@@ -47,6 +47,12 @@ const TiviApi = {
     const url = `tv/${id}/videos?api_key=${API_KEY}`;
     return instance.get(url);
   },
+
+  // Lấy ra bộ truyền hình
+  getTV(id, seasonId, episoId, params) {
+    const url = `tv/${id}/season/${seasonId}/episode/${episoId}?api_key=${API_KEY}`;
+    return instance.get(url, { params });
+  },
 };
 
 export default TiviApi;

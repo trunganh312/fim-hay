@@ -9,6 +9,7 @@ import DetailsPageMovie from "./pages/DetailsPageMovie";
 import DetailsPageTV from "./pages/DetailsPageTV";
 import WatchPageMovie from "./pages/WatchPageMovie";
 import WatchPageTV from "./pages/WatchPageTV";
+import TvSeason from "./pages/TvSeason";
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
         <Route path="/movie/:movieId/watch" element={<WatchPageMovie />} />
         <Route path="/tv/:tvId" element={<DetailsPageTV />} />
         <Route path="/tv/:tvId/watch" element={<WatchPageTV />} />
+        <Route path="/tv/:tvId/episode" element={<TvSeason />} />
       </Routes>
       <Footer />
     </div>
