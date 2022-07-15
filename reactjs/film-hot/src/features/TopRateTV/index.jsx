@@ -13,7 +13,6 @@ function TopRateSliderTV(props) {
       setTopRateTV(results);
     })();
   }, []);
-  console.log(topRateTV);
   return (
     <div className="content-movies">
       <p

@@ -19,13 +19,11 @@ function DetailsPageTV(props) {
       setSimilar(results);
       setCast(cast);
       setReview(review.results);
-      console.log(detailsTV);
     })();
   }, [tvId]);
   useEffect(() => {
     document.title = data.original_name;
   });
-  console.log(data);
   return (
     <>
       <Details

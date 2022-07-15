@@ -1,21 +1,21 @@
-import "./App.css";
-import Header from "./components/Header/Header";
-import Homepage from "./pages/Homepage";
-import "slick-carousel/slick/slick.css";
+import { Route, Routes } from "react-router-dom";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "./App.css";
 import Footer from "./components/Footer/Footer";
-import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
 import DetailsPageMovie from "./pages/DetailsPageMovie";
 import DetailsPageTV from "./pages/DetailsPageTV";
+import HomePage from "./pages/HomePage";
+import TvSeason from "./pages/TvSeason";
 import WatchPageMovie from "./pages/WatchPageMovie";
 import WatchPageTV from "./pages/WatchPageTV";
-import TvSeason from "./pages/TvSeason";
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/" element={<HomePage />}></Route>
         <Route path="/movie/:movieId" element={<DetailsPageMovie />} />
         <Route path="/movie/:movieId/watch" element={<WatchPageMovie />} />
         <Route path="/tv/:tvId" element={<DetailsPageTV />} />

@@ -13,7 +13,6 @@ function TopRateSlider(props) {
       setTopRateMovies(results);
     })();
   }, []);
-  console.log(topRateMovies);
   return (
     <div className="content-movies">
       <p

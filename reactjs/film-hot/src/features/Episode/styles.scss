@@ -1,0 +1,79 @@
+.card-ss {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #2a2a2a;
+  align-items: center;
+  color: white;
+  &.active {
+    color: red;
+  }
+}
+
+.card-ss__text {
+  margin-left: 20px;
+}
+
+.card-ss__img {
+  height: 100%;
+}
+
+.card--epi {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #2a2a2a;
+  align-items: center;
+  color: white;
+  &.active {
+    color: red;
+  }
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}
+
+.card--epi__img {
+  height: 100%;
+}
+
+.card--epi__text {
+  margin-left: 10px;
+}
+
+.scr {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.scr::-webkit-scrollbar {
+  width: 14px; /* Chiều rộng vùng chứa scrollbar */
+}
+.scr::-webkit-scrollbar-track {
+  background: #ccc; /* Màu nền ngoài của thanh scrollbar */
+}
+.scr::-webkit-scrollbar-thumb {
+  background-color: #ffa500; /* Màu của thanh cuộn (scroll thumb) */
+  border-radius: 5px; /* Bo góc scroll thumb */
+  border: 2px solid #ccc; /* Không hỗ trợ padding, margin, transition nên dùng viền cùng màu nên để padding scroll thumb */
+}
+.scr::-webkit-scrollbar-thumb:hover {
+  background-color: #ff8000; /* Hiệu ứng di chuột đổi màu*/
+}
+.scr {
+  /*cho Firefox*/
+  scrollbar-width: thin; /* "auto" hoặc "thin" */
+  scrollbar-color: orange #ccc; /* scroll thumb and track */
+}
+
+.watch__seasons {
+  padding: 0 67.5px;
+  text-align: left;
+}

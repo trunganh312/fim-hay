@@ -9,7 +9,6 @@ SliderContent.propTypes = {
 };
 
 function SliderContent({ items = [] }) {
-  console.log(items);
   const settings = {
     dots: false,
     infinite: true,

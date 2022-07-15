@@ -13,7 +13,6 @@ function PopularSliderTV(props) {
       setPopularTV(results);
     })();
   }, []);
-  console.log(popularTV);
   return (
     <div className="content-movies">
       <p

@@ -18,7 +18,7 @@ function Watch({ data, recommend }) {
                 width="100%"
                 scrolling="no"
                 height="500px"
-                allowfullscreen="true"
+                allowFullScreen={true}
                 frameBorder="0"
                 src={`https://2embed.org/embed/${data.imdb_id}`}
               ></iframe>

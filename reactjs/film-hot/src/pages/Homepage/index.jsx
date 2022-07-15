@@ -8,7 +8,7 @@ import TopRateSliderTV from "../../features/TopRateTV";
 import TrendingSliderTV from "../../features/TrendingTV";
 import PopularSliderTV from "../../features/PopularTV";
 
-function Homepage(props) {
+function HomePage(props) {
   const [item, setItem] = useState({});
   useEffect(() => {
     document.title = `eCinema - Popular movies in one place`;
@@ -17,7 +17,6 @@ function Homepage(props) {
     (async () => {
       const { results } = await moviesApi.getTrending24h();
       setItem(results[0]);
-      console.log(results);
     })();
   }, []);
   return (
@@ -33,4 +32,4 @@ function Homepage(props) {
   );
 }
 
-export default Homepage;
+export default HomePage;

@@ -13,7 +13,6 @@ function PopularSlider(props) {
       setPopularMovies(results);
     })();
   }, []);
-  console.log(popularMovies);
   return (
     <div className="content-movies">
       <p

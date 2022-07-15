@@ -13,7 +13,6 @@ function TrendingSliderTV(props) {
       setTrendingTV(results);
     })();
   }, []);
-  console.log(trendingTV);
   return (
     <div className="content-movies">
       <p

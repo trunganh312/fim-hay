@@ -1,7 +1,7 @@
 import React from "react";
 
 function RatedStar({ voteAverage, voteCount = null }) {
-  const length = Math.round(voteAverage) || 10;
+  const length = Math.round(voteAverage) || 0;
   const arrRate = Array.from(new Array(Math.round(length))) || [];
   const arrNoRate = Array.from(new Array(Math.round(10 - length)));
   return (
@@ -20,7 +20,7 @@ function RatedStar({ voteAverage, voteCount = null }) {
           </span>
         );
       })}
-      {voteCount ? `(${voteCount} phiếu)` : ""}
+      {voteCount >= 0 ? `(${voteCount} phiếu)` : ""}
     </div>
   );
 }

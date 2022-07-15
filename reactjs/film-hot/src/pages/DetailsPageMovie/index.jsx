@@ -19,8 +19,6 @@ function DetailsPageMovie(props) {
       setSimilar(results);
       setCast(cast);
       setReview(review.results);
-      console.log(review);
-      console.log(detailsMovie);
     })();
   }, [movieId]);
   useEffect(() => {

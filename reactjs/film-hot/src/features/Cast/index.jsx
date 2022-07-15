@@ -2,9 +2,7 @@ import React from "react";
 import "./styles.scss";
 function Cast({ cast }) {
   const castNotNull = cast.filter((item) => item.profile_path !== null);
-  console.log(castNotNull);
   const newCast = castNotNull.slice(0, 10);
-  console.log(newCast);
   return (
     <div className="flex">
       {newCast.map((item, i) => {
