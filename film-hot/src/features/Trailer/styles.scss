@@ -1,0 +1,64 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999999999;
+  background-color: #2a2a2a80;
+}
+.trailer {
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  position: fixed;
+  width: 536px;
+  padding: 20px;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  z-index: 999999999;
+  overflow-y: scroll;
+  &__header {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    justify-content: space-between;
+    & > h2 {
+      font-size: 25px;
+    }
+    & > button:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__btn {
+    -webkit-appearance: button;
+    text-transform: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #e5e7eb;
+    font-size: 35px;
+  }
+}
+
+.trailer::-webkit-scrollbar {
+  width: 14px; /* Chiều rộng vùng chứa scrollbar */
+}
+.trailer::-webkit-scrollbar-track {
+  background: #ccc; /* Màu nền ngoài của thanh scrollbar */
+}
+.trailer::-webkit-scrollbar-thumb {
+  background-color: #ffa500; /* Màu của thanh cuộn (scroll thumb) */
+  border-radius: 5px; /* Bo góc scroll thumb */
+  border: 2px solid #ccc; /* Không hỗ trợ padding, margin, transition nên dùng viền cùng màu nên để padding scroll thumb */
+}
+.trailer::-webkit-scrollbar-thumb:hover {
+  background-color: #ff8000; /* Hiệu ứng di chuột đổi màu*/
+}
+.trailer {
+  /*cho Firefox*/
+  scrollbar-width: thin; /* "auto" hoặc "thin" */
+  scrollbar-color: orange #ccc; /* scroll thumb and track */
+}
