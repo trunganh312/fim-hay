@@ -9,9 +9,11 @@ function Header() {
           <img src="https://e-cinema.vercel.app/logo.png" alt="" />
         </Link>
       </div>
-      <div className="header__search">
-        <FaSearch />
-      </div>
+      <Link to="/search">
+        <div className="header__search">
+          <FaSearch />
+        </div>
+      </Link>
     </header>
   );
 }
