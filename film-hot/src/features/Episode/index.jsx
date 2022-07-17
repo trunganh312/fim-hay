@@ -60,7 +60,9 @@ function Episode({ data, seasons }) {
               >
                 <div className="card-ss__img">
                   <img
-                    src={`https://image.tmdb.org/t/p/original/${ss?.poster_path}`}
+                    src={`https://image.tmdb.org/t/p/original/${
+                      ss?.poster_path || ss?.backdrop_path
+                    }`}
                     alt=""
                   />
                 </div>

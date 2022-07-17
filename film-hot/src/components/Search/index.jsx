@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import "./styles.scss";
-import { useNavigate, useLocation } from "react-router-dom";
-import searchApi from "../../Api/searchApi";
+import { useLocation, useNavigate } from "react-router-dom";
 import ListSearch from "../../features/ListSearch";
+import "./styles.scss";
 function Search() {
   const location = useLocation();
   const [value, setValue] = useState("");
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
+  const [page, setPagination] = useState(1);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (value.length === 0) return;
     navigate({
       pathname: "/search",
-      search: `?q=${value}&page=1`,
+      search: `?q=${value}&page=${page}`,
     });
 
     setShow(true);
@@ -25,6 +25,7 @@ function Search() {
       search={location.search}
       setShow={(show) => setShow(show)}
       location={location}
+      setPagination={(idx) => setPagination(idx)}
     />
   ) : (
     <form className="form" onSubmit={handleSubmit}>

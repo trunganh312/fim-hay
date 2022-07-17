@@ -31,7 +31,9 @@ function Details({ data = {}, similar, cast, review, string }) {
           <div className="col l-3">
             <div className="details__img">
               <img
-                src={`https://image.tmdb.org/t/p/original/${data.poster_path}`}
+                src={`https://image.tmdb.org/t/p/original/${
+                  data.poster_path || data.backdrop_path
+                }`}
                 alt=""
               />
             </div>

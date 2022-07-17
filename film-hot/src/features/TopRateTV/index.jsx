@@ -14,7 +14,7 @@ function TopRateSliderTV(props) {
     })();
   }, []);
   return (
-    <div className="content-movies">
+    <div className="content-movies" style={{ marginBottom: "150px" }}>
       <p
         style={{
           marginTop: "32px",

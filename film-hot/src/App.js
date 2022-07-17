@@ -25,7 +25,6 @@ function App() {
         <Route path="/tv/:tvId/watch" element={<WatchPageTV />} />
         <Route path="/tv/:tvId/episode" element={<TvSeason />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/search?q=boy" element />
       </Routes>
       <Footer />
     </div>
